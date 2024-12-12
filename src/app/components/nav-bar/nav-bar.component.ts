@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { RyansHttpService } from '../../services/ryans-http-service.service';
 
 @Component({
-  selector: 'app-nav-bar',
-  standalone: true,
-  imports: [],
-  templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.less'
+    selector: 'app-nav-bar',
+    imports: [],
+    templateUrl: './nav-bar.component.html',
+    styleUrl: './nav-bar.component.less'
 })
 export class NavBarComponent implements OnInit{
   data: any;

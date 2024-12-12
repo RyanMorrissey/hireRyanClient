@@ -5,11 +5,10 @@ import { HomeComponent } from './components/home/home.component';
 import {} from '@angular/common/http';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NavBarComponent, HomeComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+    selector: 'app-root',
+    imports: [RouterOutlet, NavBarComponent, HomeComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.less'
 })
 export class AppComponent {
   title = 'hireRyanClient';
