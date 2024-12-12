@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RyansHttpService } from '../../services/ryans-http-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
     selector: 'app-nav-bar',
@@ -8,17 +10,21 @@ import { RyansHttpService } from '../../services/ryans-http-service.service';
     styleUrl: './nav-bar.component.less'
 })
 export class NavBarComponent implements OnInit{
-  data: any;
 
   constructor(
-    private ryansHttpService : RyansHttpService
+    private ryansHttpService : RyansHttpService,
+    private snackBar : MatSnackBar
   ) {}
 
   ngOnInit(): void {
-      console.log('Loaded nav bar')
+    console.log('Loaded nav bar')
   }
 
-  deadLink(): void {
-    console.log('this router doesnt do anything yet')
+  nyi(link: string): void {
+    this.snackBar.open(link + ' is not implemented yet', 'Close')
   }
+
+  lemon(): void {
+    this.snackBar.open('lemon', 'lemon')
+    }
 }
