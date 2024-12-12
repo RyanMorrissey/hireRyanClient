@@ -16,23 +16,10 @@ export class NavBarComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-      console.log('Did this work?') 
-      this.ryansHttpService.testService()
-      // this.ryansHttpService.get('https://jsonplaceholder.typicode.com/posts/1').subscribe({
-      //   next: (v) => console.log(v),
-      //   error: (e) => console.error(e),
-      //   complete: () => console.info('complete') 
-      // })
+      console.log('Loaded nav bar')
+  }
 
-      // this.http.get('https://jsonplaceholder.typicode.com/posts/1')
-      //       .subscribe(
-      //           response => {
-      //               this.data = response;
-      //               console.log('response', response);
-      //           },
-      //           error => {
-      //               console.error('Error fetching data:', error);
-      //           }
-      //       );
+  deadLink(): void {
+    console.log('this router doesnt do anything yet')
   }
 }
