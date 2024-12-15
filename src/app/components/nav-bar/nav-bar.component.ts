@@ -1,30 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { RyansHttpService } from '../../services/ryans-http-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { CommonModule } from '@angular/common'
 
 @Component({
     selector: 'app-nav-bar',
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './nav-bar.component.html',
     styleUrl: './nav-bar.component.less'
 })
 export class NavBarComponent implements OnInit{
 
+  options: string[]
+  test: boolean = false;
+
   constructor(
-    private ryansHttpService : RyansHttpService,
     private snackBar : MatSnackBar
-  ) {}
+  ) {
+    this.options = ['home', 'resume', 'frontend', 'backend', 'hobbies', 'gimli']
+  }
 
   ngOnInit(): void {
-    console.log('Loaded nav bar')
+    this.test = true
   }
-
-  nyi(link: string): void {
-    this.snackBar.open(link + ' is not implemented yet', 'Close')
-  }
-
-  lemon(): void {
-    this.snackBar.open('lemon', 'lemon')
-    }
 }
