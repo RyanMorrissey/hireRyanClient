@@ -14,6 +14,6 @@ export const routes: Routes = [
   {path: 'backend', component: BackEndComponent},
   {path: 'hobbies', component: HobbiesComponent},
   {path: 'gimli', component: DogComponent},
-  {path: '',   redirectTo: '/home', pathMatch: 'full'},
+  {path: '',   component: HomeComponent},
   {path: '**', component: PageNotFoundComponent}
   ];
