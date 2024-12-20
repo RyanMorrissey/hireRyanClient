@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './dog.component.less'
 })
 export class DogComponent {
-
 }

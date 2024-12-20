@@ -1,0 +1,26 @@
+<nav class="bg-gray-800 h-screen w-52 px-4 py-6 fixed">
+  <ul class="space-y-4">
+    <li>
+      <button (click)="updateQueryParam('explanation')" class="flex items-center text-gray-100 hover:text-gray-400">
+        Explanation
+      </button>
+    </li>
+    <li>
+      <button (click)="updateQueryParam('dog')" class="flex items-center text-gray-100 hover:text-gray-400">
+        Dog
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<div class="ml-52 p-6">
+  <ng-container [ngSwitch]="currentUrl">
+    <div *ngSwitchCase="'dog'">
+      <app-dog></app-dog>
+    </div>
+    <div *ngSwitchDefault class="text-gray-400 leading-relaxed">
+      <p>I am calling this page "demo" but it's really just a place for me to keep my exercises.  My idea is to pick up random exercises that sound fun to do and create a component for them.</p>
+      <p>Clicking a section on the nav bar to the left adds an url param.  Depending on the url param, I load a different component which is a standalone exercise.</p>
+    </div>
+  </ng-container>
+</div>

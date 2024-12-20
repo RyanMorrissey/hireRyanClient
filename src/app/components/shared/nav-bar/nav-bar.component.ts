@@ -23,7 +23,7 @@ export class NavBarComponent implements OnInit, OnDestroy{
     private url : LocationStrategy,
     private router: Router
   ) {
-    this.options = ['home', 'resume', 'frontend', 'backend', 'hobbies', 'gimli']
+    this.options = ['home', 'resume', 'frontend', 'backend', 'hobbies', 'gimli', 'demo']
 
   }
 

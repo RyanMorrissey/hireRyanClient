@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { ResumeComponent } from './components/resume/resume.component';
-import { FrontEndComponent } from './components/front-end/front-end.component';
-import { BackEndComponent } from './components/back-end/back-end.component';
-import { HobbiesComponent } from './components/hobbies/hobbies.component';
-import { DogComponent } from './components/dog/dog.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomeComponent } from '@components/pages/home/home.component';
+import { ResumeComponent } from '@components/pages/resume/resume.component';
+import { FrontEndComponent } from '@components/pages/front-end/front-end.component';
+import { BackEndComponent } from '@components/pages/back-end/back-end.component';
+import { HobbiesComponent } from '@components/pages/hobbies/hobbies.component';
+import { DogComponent } from '@components/pages/dog/dog.component';
+import { DemoComponent } from './components/pages/demo/demo.component';
+import { PageNotFoundComponent } from '@components/pages/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -14,6 +15,7 @@ export const routes: Routes = [
   {path: 'backend', component: BackEndComponent},
   {path: 'hobbies', component: HobbiesComponent},
   {path: 'gimli', component: DogComponent},
+  {path: 'demo', component: DemoComponent},
   {path: '',   component: HomeComponent},
   {path: '**', component: PageNotFoundComponent}
   ];
