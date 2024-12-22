@@ -1,35 +1,55 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { environment  } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RyansHttpService {
-  // hold your horses I know its localhost i'll change it later sheesh
-  // Im prolly gonna delete and rewrite this all anyway
-  private url = 'http://localhost:8080/check';
+  private readonly apiUrl = environment.apiUrl;
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
-  testService() {
-    console.log('testService() called')
+  get(endpoint: string, id?: string): Promise<any> {
+    const url = id ? `${this.apiUrl}/${endpoint}/${id}` : `${this.apiUrl}/${endpoint}`;
+    return this.http.get<any>(url).toPromise()
+      .then(response => response)
+      .catch(this.handleError);
   }
 
-  get(url: string, options?: any) {
-    return this.httpClient.get(url, options);
+  post(endpoint: string, data: any): Promise<any> {
+    return this.http.post<any>(`${this.apiUrl}/${endpoint}`, data, this.getHttpOptions()).toPromise()
+      .then(response => response)
+      .catch(this.handleError);
   }
 
-  post(url: string, data: any, options?: any) {
-    return this.httpClient.post(url, data, options);
+  put(endpoint: string, data: any): Promise<any> {
+    return this.http.put<any>(`${this.apiUrl}/${endpoint}`, data, this.getHttpOptions()).toPromise()
+     .catch(this.handleError);
   }
 
-  put(url: string, data: any, options?: any) {
-    return this.httpClient.put(url, data, options);
+  delete(endpoint: string, id: string): Promise<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${endpoint}/${id}`).toPromise()
+     .catch(this.handleError);
   }
 
-  delete(url: string, options?: any) {
-    return this.httpClient.delete(url, options);
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = `Client-side error: ${error.error.message}`;
+    } else {
+      errorMessage = `Server-side error: ${error.status} ${error.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(errorMessage);
+  }
+
+  private getHttpOptions() {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return { headers };
   }
 }

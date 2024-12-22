@@ -10,6 +10,11 @@
         Dog
       </button>
     </li>
+    <li>
+      <button (click)="updateQueryParam('http-tester')" class="flex items-center text-gray-100 hover:text-gray-400">
+        Http Tester
+      </button>
+    </li>
   </ul>
 </nav>
 
@@ -17,6 +22,9 @@
   <ng-container [ngSwitch]="currentUrl">
     <div *ngSwitchCase="'dog'">
       <app-dog></app-dog>
+    </div>
+    <div *ngSwitchCase="'http-tester'">
+      <app-http-tester></app-http-tester>
     </div>
     <div *ngSwitchDefault class="text-gray-400 leading-relaxed">
       <p>I am calling this page "demo" but it's really just a place for me to keep my exercises.  My idea is to pick up random exercises that sound fun to do and create a component for them.</p>
