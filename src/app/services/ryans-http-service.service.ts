@@ -15,7 +15,17 @@ export class RyansHttpService {
   get(endpoint: string, id?: string): Promise<any> {
     const url = id ? `${this.apiUrl}/${endpoint}/${id}` : `${this.apiUrl}/${endpoint}`;
     return this.http.get<any>(url).toPromise()
-      .then(response => response)
+      .then(response => {
+        console.log('response', response)
+        // TODO: write a definition class so I don't need to type "OK"
+        if (response.status && response.status == "OK") {
+          // TODO: display success toast
+          return response.payload
+        } else {
+          // TODO: display failure toast
+          return null
+        }
+        })
       .catch(this.handleError);
   }
 

@@ -44,14 +44,5 @@ export class DemoComponent implements OnInit {
       queryParams: { display: param },
       queryParamsHandling: 'merge'
     });
-
-    try {
-        const data = await this.httpService.get('getAllHttpTests');
-        console.log('Data received:', data);
-        const data2 = await this.httpService.get('getHttpTestById', '1');
-        console.log('Data2 received:', data2);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
   }
 }
