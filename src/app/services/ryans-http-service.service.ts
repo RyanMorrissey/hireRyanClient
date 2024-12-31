@@ -16,7 +16,6 @@ export class RyansHttpService {
     const url = id ? `${this.apiUrl}/${endpoint}/${id}` : `${this.apiUrl}/${endpoint}`;
     return this.http.get<any>(url).toPromise()
       .then(response => {
-        console.log('response', response)
         // TODO: write a definition class so I don't need to type "OK"
         if (response.status && response.status == "OK") {
           // TODO: display success toast
@@ -37,12 +36,26 @@ export class RyansHttpService {
 
   put(endpoint: string, data: any): Promise<any> {
     return this.http.put<any>(`${this.apiUrl}/${endpoint}`, data, this.getHttpOptions()).toPromise()
-     .catch(this.handleError);
+     .then(response => {
+       // TODO: write a definition class so I don't need to type "OK"
+       if (response.status && response.status == "OK") {
+         return response.payload
+       } else {
+         return null
+       }
+     }).catch(this.handleError);
   }
 
-  delete(endpoint: string, id: string): Promise<any> {
+  delete(endpoint: string, id: number): Promise<boolean> {
     return this.http.delete<any>(`${this.apiUrl}/${endpoint}/${id}`).toPromise()
-     .catch(this.handleError);
+    .then(response => {
+      // TODO: write a definition class so I don't need to type "OK"
+      if (response.status && response.status == "OK") {
+        return response.payload
+      } else {
+        return false
+      }
+    }).catch(this.handleError);
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
