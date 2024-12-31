@@ -30,8 +30,14 @@ export class RyansHttpService {
 
   post(endpoint: string, data: any): Promise<any> {
     return this.http.post<any>(`${this.apiUrl}/${endpoint}`, data, this.getHttpOptions()).toPromise()
-      .then(response => response)
-      .catch(this.handleError);
+      .then(response => {
+         // TODO: write a definition class so I don't need to type "OK"
+         if (response.status && response.status == "OK") {
+           return response.payload
+         } else {
+           return null
+         }
+       }).catch(this.handleError);
   }
 
   put(endpoint: string, data: any): Promise<any> {
@@ -46,7 +52,7 @@ export class RyansHttpService {
      }).catch(this.handleError);
   }
 
-  delete(endpoint: string, id: number): Promise<boolean> {
+  delete(endpoint: string, id: string): Promise<boolean> {
     return this.http.delete<any>(`${this.apiUrl}/${endpoint}/${id}`).toPromise()
     .then(response => {
       // TODO: write a definition class so I don't need to type "OK"

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RyansHttpService } from '@services/ryans-http-service.service'
 import { PopupModalService } from '@services/popup-modal.service'
+import { CookieManagerService } from '@services/cookie-manager.service'
 import { HttpTest } from '@models/http-test'
 import { CommonModule } from '@angular/common'
 import { ConfirmDialog } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-http-tester',
@@ -19,37 +21,44 @@ export class HttpTesterComponent implements OnInit {
   constructor(
     private httpService: RyansHttpService,
     private popupModalService: PopupModalService,
-    private confirmationService: ConfirmationService, private messageService: MessageService) {}
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+    private cookieManagerService: CookieManagerService,
+  ) {}
 
-  formData = {
+  let formData = {
     id: 0,
-    value: ''
+    value: '',
+    cookieValue: ''
   };
-  databaseTests: HttpTest[] = []
+  let databaseTests: HttpTest[] = []
+  let tastyCookie: string = ''
 
   ngOnInit() {
+    this.tastyCookie = this.cookieManagerService.getCookie('httpTestCookie')
+    if (this.tastyCookie == '') {
+      this.tastyCookie = uuidv4();
+      this.cookieManagerService.setCookie('httpTestCookie', this.tastyCookie, 7)
+    }
+    this.formData.cookieValue = this.tastyCookie
     this.pullDatabaseTests()
   }
 
   async pullDatabaseTests() {
-    let dbResponse = await this.httpService.get('getAllDatabaseTests');
+    let dbResponse = await this.httpService.get('getAllDatabaseTestsByCookie', this.tastyCookie);
     if (dbResponse != null) {
       this.databaseTests = dbResponse
     }
   }
 
   copyToForm(id: number, value: string){
-    this.formData = {
-      id: id,
-      value: value
-    };
+    this.formData.id = id
+    this.formData.value = value
   }
 
   resetForm() {
-    this.formData = {
-      id: 0,
-      value: ''
-    };
+    this.formData.id = 0
+    this.formData.value = ''
   }
 
   openDeleteModal(id: number) {
@@ -61,10 +70,14 @@ export class HttpTesterComponent implements OnInit {
   }
 
   async deleteDatabaseTest(id: number) {
-    let dbResponse = await this.httpService.delete('deleteDatabaseTestById', id);
+    let deleteString = `${id}/${this.tastyCookie}`
+    let dbResponse = await this.httpService.delete('deleteDatabaseTestByIdAndCookie', deleteString);
     if (dbResponse == true) {
       this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'Record deleted successfully' });
       this.pullDatabaseTests()
+    } else {
+      this.messageService.add({ severity: 'error', summary: 'D:', sticky: true,
+        detail: `Either the record doesn't exist or you are tried to delete a record you don't own.  How dare you.  You should be ashamed.  I'm gonna be sick...` });
     }
   }
 
@@ -78,8 +91,14 @@ export class HttpTesterComponent implements OnInit {
   }
 
   async onSubmit() {
-    let newTest = new HttpTest(this.formData.id, this.formData.value)
-    const data = await this.httpService.post('createOrUpdateDatabaseTest', newTest);
-    this.pullDatabaseTests()
+    let newTest = new HttpTest(this.formData.id, this.formData.value, this.formData.cookieValue)
+    const dbResponse = await this.httpService.post('createOrUpdateDatabaseTest', newTest);
+    if (dbResponse != null) {
+      this.messageService.add({ severity: 'success', summary: ':D', detail: 'Record created or updated successfully' });
+      this.pullDatabaseTests()
+    } else {
+      this.messageService.add({ severity: 'error', summary: 'D:', sticky: true,
+        detail: `Either the record doesn't exist or you are tried to update a record you don't own.  How dare you.  You should be ashamed.  I'm gonna be sick...` });
+    }
   }
 }
