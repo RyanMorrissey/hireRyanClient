@@ -26,13 +26,13 @@ export class HttpTesterComponent implements OnInit {
     private cookieManagerService: CookieManagerService,
   ) {}
 
-  let formData = {
+  formData = {
     id: 0,
-    value: '',
+    note: '',
     cookieValue: ''
   };
-  let databaseTests: HttpTest[] = []
-  let tastyCookie: string = ''
+  databaseTests: HttpTest[] = []
+  tastyCookie: string = ''
 
   ngOnInit() {
     this.tastyCookie = this.cookieManagerService.getCookie('httpTestCookie')
@@ -51,14 +51,14 @@ export class HttpTesterComponent implements OnInit {
     }
   }
 
-  copyToForm(id: number, value: string){
+  copyToForm(id: number, note: string){
     this.formData.id = id
-    this.formData.value = value
+    this.formData.note = note
   }
 
   resetForm() {
     this.formData.id = 0
-    this.formData.value = ''
+    this.formData.note = ''
   }
 
   openDeleteModal(id: number) {
@@ -91,7 +91,7 @@ export class HttpTesterComponent implements OnInit {
   }
 
   async onSubmit() {
-    let newTest = new HttpTest(this.formData.id, this.formData.value, this.formData.cookieValue)
+    let newTest = new HttpTest(this.formData.id, this.formData.note, this.formData.cookieValue)
     const dbResponse = await this.httpService.post('createOrUpdateDatabaseTest', newTest);
     if (dbResponse != null) {
       this.messageService.add({ severity: 'success', summary: ':D', detail: 'Record created or updated successfully' });

@@ -24,11 +24,11 @@
           />
         </div>
         <div class="mb-4">
-          <label for="name" class="block text-white dark:text-gray-100">Value:</label>
+          <label for="name" class="block text-white dark:text-gray-100">Note:</label>
           <input
             type="text"
             id="name"
-            [(ngModel)]="formData.value"
+            [(ngModel)]="formData.note"
             name="name"
             required
             class="w-full p-2 border border-gray-600 rounded-md text-white bg-gray-700"
@@ -51,7 +51,7 @@
         <thead>
         <tr>
           <th class="border px-4 py-2">ID</th>
-          <th class="border px-4 py-2">Value</th>
+          <th class="border px-4 py-2">Note</th>
           <th class="border px-4 py-2">Date Created</th>
           <th class="border px-4 py-2">Date Updated</th>
           <th class="border px-4 py-2"></th>
@@ -59,8 +59,8 @@
         </thead>
         <tbody>
         <tr *ngFor="let test of databaseTests">
-          <td class="border px-4 py-2 hover:underline" (click)="copyToForm(test.id, test.value)">{{ test.id }}</td>
-          <td class="border px-4 py-2">{{ test.value }}</td>
+          <td class="border px-4 py-2 hover:underline" (click)="copyToForm(test.id, test.note)">{{ test.id }}</td>
+          <td class="border px-4 py-2">{{ test.note }}</td>
           <td class="border px-4 py-2">
             {{ test.dateCreated | date: 'shortDate' }}
           </td>
