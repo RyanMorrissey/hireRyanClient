@@ -10,6 +10,11 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { v4 as uuidv4 } from 'uuid';
 
+export enum FormState {
+  CREATING = 'creating',
+  EDITING = 'editing',
+}
+
 @Component({
   selector: 'app-http-tester',
   imports: [FormsModule, CommonModule, ConfirmDialog, ToastModule],
@@ -33,6 +38,7 @@ export class HttpTesterComponent implements OnInit {
   };
   databaseTests: HttpTest[] = []
   tastyCookie: string = ''
+  currentState: FormState = FormState.CREATING;
 
   ngOnInit() {
     this.tastyCookie = this.cookieManagerService.getCookie('httpTestCookie')
@@ -54,11 +60,13 @@ export class HttpTesterComponent implements OnInit {
   copyToForm(id: number, note: string){
     this.formData.id = id
     this.formData.note = note
+    this.currentState = FormState.EDITING;
   }
 
   resetForm() {
     this.formData.id = 0
     this.formData.note = ''
+    this.currentState = FormState.CREATING;
   }
 
   openDeleteModal(id: number) {

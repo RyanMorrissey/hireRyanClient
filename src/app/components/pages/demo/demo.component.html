@@ -6,11 +6,6 @@
       </button>
     </li>
     <li>
-      <button (click)="updateQueryParam('dog')" class="flex items-center text-gray-100 hover:text-gray-400">
-        Dog
-      </button>
-    </li>
-    <li>
       <button (click)="updateQueryParam('http-tester')" class="flex items-center text-gray-100 hover:text-gray-400">
         Http Tester
       </button>
@@ -27,8 +22,9 @@
       <app-http-tester></app-http-tester>
     </div>
     <div *ngSwitchDefault class="text-gray-400 leading-relaxed">
-      <p>I am calling this page "demo" but it's really just a place for me to keep my exercises.  My idea is to pick up random exercises that sound fun to do and create a component for them.</p>
-      <p>Clicking a section on the nav bar to the left adds an url param.  Depending on the url param, I load a different component which is a standalone exercise.</p>
+      <p class="pb-6">I am calling this page "demo" but it's really just a place for me to keep my exercises.  My idea is to pick up random exercises that sound fun to do and create a component for them.</p>
+      <p class="pb-6">Clicking a section on the nav bar to the left adds an url param.  Depending on the url param, I load a different component which is a standalone exercise.</p>
+      <p class="pb-6">Please let me know if there's anything you think I should do or improve on!</p>
     </div>
   </ng-container>
 </div>
