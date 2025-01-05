@@ -8,18 +8,5 @@ import { ImageGalleryComponent } from '@components/shared/image-gallery/image-ga
   styleUrl: './dog.component.less'
 })
 export class DogComponent {
-  galleryImages: string[] = [
-        'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-              'assets/images/dog.png',
-      ];
+  galleryImages = Array.from({ length: 25 }, (_, index) => `assets/images/gimli/gimli${index + 1}.jpg`)
 }
