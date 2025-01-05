@@ -12,63 +12,48 @@ export class HobbiesComponent {
   // but the things I am finding seem like a lot more work than its worth.  I've got about 40 images so im just just gonna
   // brute force this.  Gimli will be easier.
   galleryImages: string[] = [
-      'assets/images/hobby/display1.jpg',
-      'assets/images/hobby/display2.jpg',
-      'assets/images/hobby/display3.jpg',
-      'assets/images/hobby/bane_unpainted.jpg',
-      'assets/images/hobby/bane_painted.jpg',
-      'assets/images/hobby/bane_painted2.jpg',
-      'assets/images/hobby/display4.jpg',
-      'assets/images/hobby/display5.jpg',
-      'assets/images/hobby/display6.jpg',
-      'assets/images/hobby/warhammer_misc1.jpg',
-      'assets/images/hobby/warhammer_misc2.jpg',
-      'assets/images/hobby/warhammer_misc3.jpg',
-      'assets/images/hobby/display7.jpg',
-      'assets/images/hobby/display8.jpg',
-      'assets/images/hobby/display9.jpg',
-      'assets/images/hobby/display10.jpg',
-      'assets/images/hobby/dizzy_unpainted.jpg',
-      'assets/images/hobby/dizzy_painted1.jpg',
-      'assets/images/hobby/dizzy_complete.jpg',
-      'assets/images/hobby/warhammer_misc4.jpg',
-      'assets/images/hobby/warhammer_misc5.jpg',
-      'assets/images/hobby/warhammer_misc6.jpg',
-      'assets/images/hobby/graboid_unpainted.jpg',
-      'assets/images/hobby/graboid_painted.jpg',
-      'assets/images/hobby/graboid_painted2.jpg',
-      'assets/images/hobby/guilliman_unpainted1.jpg',
-      'assets/images/hobby/guilliman_unpainted2.jpg',
-      'assets/images/hobby/guilliman_unpainted3.jpg',
-      'assets/images/hobby/guilliman_painted.jpg',
-      'assets/images/hobby/joker_printing.jpg',
-      'assets/images/hobby/joker_unpainted.jpg',
-      'assets/images/hobby/joker_complete.jpg',
-      'assets/images/hobby/mm1.jpg',
-      'assets/images/hobby/mm2.jpg',
-      'assets/images/hobby/oddish_printing.jpg',
-      'assets/images/hobby/oddish_painted1.jpg',
-      'assets/images/hobby/misc_statues1.jpg',
-      'assets/images/hobby/hydralisk.jpg',
-      'assets/images/hobby/eye_target.jpg',
-      'assets/images/hobby/chozo_painted.jpg',
-      'assets/images/hobby/warhammer_misc7.jpg',
-      'assets/images/hobby/warhammer_misc8.jpg',
-      'assets/images/hobby/warhammer_misc9.jpg',
+      'assets/images/hobby/display1-min.jpg',
+      'assets/images/hobby/display2-min.jpg',
+      'assets/images/hobby/display3-min.jpg',
+      'assets/images/hobby/bane_unpainted-min.jpg',
+      'assets/images/hobby/bane_painted-min.jpg',
+      'assets/images/hobby/bane_painted2-min.jpg',
+      'assets/images/hobby/display4-min.jpg',
+      'assets/images/hobby/display5-min.jpg',
+      'assets/images/hobby/display6-min.jpg',
+      'assets/images/hobby/warhammer_misc1-min.jpg',
+      'assets/images/hobby/warhammer_misc2-min.jpg',
+      'assets/images/hobby/warhammer_misc3-min.jpg',
+      'assets/images/hobby/display7-min.jpg',
+      'assets/images/hobby/display8-min.jpg',
+      'assets/images/hobby/display9-min.jpg',
+      'assets/images/hobby/display10-min.jpg',
+      'assets/images/hobby/dizzy_unpainted-min.jpg',
+      'assets/images/hobby/dizzy_painted1-min.jpg',
+      'assets/images/hobby/dizzy_complete-min.jpg',
+      'assets/images/hobby/warhammer_misc4-min.jpg',
+      'assets/images/hobby/warhammer_misc5-min.jpg',
+      'assets/images/hobby/warhammer_misc6-min.jpg',
+      'assets/images/hobby/graboid_unpainted-min.jpg',
+      'assets/images/hobby/graboid_painted-min.jpg',
+      'assets/images/hobby/graboid_painted2-min.jpg',
+      'assets/images/hobby/guilliman_unpainted1-min.jpg',
+      'assets/images/hobby/guilliman_unpainted2-min.jpg',
+      'assets/images/hobby/guilliman_unpainted3-min.jpg',
+      'assets/images/hobby/guilliman_painted-min.jpg',
+      'assets/images/hobby/joker_printing-min.jpg',
+      'assets/images/hobby/joker_unpainted-min.jpg',
+      'assets/images/hobby/joker_complete-min.jpg',
+      'assets/images/hobby/mm1-min.jpg',
+      'assets/images/hobby/mm2-min.jpg',
+      'assets/images/hobby/oddish_printing-min.jpg',
+      'assets/images/hobby/oddish_painted1-min.jpg',
+      'assets/images/hobby/misc_statues1-min.jpg',
+      'assets/images/hobby/hydralisk-min.jpg',
+      'assets/images/hobby/eye_target-min.jpg',
+      'assets/images/hobby/chozo_painted-min.jpg',
+      'assets/images/hobby/warhammer_misc7-min.jpg',
+      'assets/images/hobby/warhammer_misc8-min.jpg',
+      'assets/images/hobby/warhammer_misc9-min.jpg',
     ];
-
-
-
-
-
-
-  /* selectedImage: string | null = null;
-
-  openImage(imageUrl: string): void {
-    this.selectedImage = imageUrl;
-  }
-
-  closeImage(): void {
-    this.selectedImage = null;
-  } */
 }

@@ -1,14 +1,21 @@
 <div class="grid grid-cols-[repeat(auto-fill,_200px)] justify-center gap-4 p-4">
   <div
-    *ngFor="let imageUrl of galleryImages()"
+    *ngFor="let imageUrl of loadedImages"
     class="w-[200px] h-[200px] cursor-pointer transform transition-transform duration-200 ease-in-out hover:scale-105"
     (click)="openImage(imageUrl)"
   >
     <img
       [src]="imageUrl"
       alt="Gallery Image"
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover rounded"
     />
+  </div>
+  <div
+    *ngIf="!loadMoreDisabled"
+    class="w-[200px] h-[200px] flex items-center justify-center cursor-pointer transform transition-transform duration-200 ease-in-out hover:scale-105 bg-gray-800 rounded"
+    (click)="loadMore()"
+  >
+    <span class="text-center font-semibold">Load More</span>
   </div>
 </div>
 
