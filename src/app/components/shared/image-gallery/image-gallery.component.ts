@@ -16,7 +16,6 @@ export class ImageGalleryComponent implements OnInit {
   loadMoreDisabled: boolean = false
 
   ngOnInit(): void {
-      console.log('init')
       this.loadMore()
   }
 
