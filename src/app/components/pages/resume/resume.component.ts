@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-// Use https://www.npmjs.com/package/@syncfusion/ej2-angular-pdfviewer to display the resume
+import { NgxExtendedPdfViewerModule,NgxExtendedPdfViewerService, pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 
 @Component({
   selector: 'app-resume',
-  imports: [],
+  imports: [NgxExtendedPdfViewerModule],
+  providers: [NgxExtendedPdfViewerService],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.less'
 })
