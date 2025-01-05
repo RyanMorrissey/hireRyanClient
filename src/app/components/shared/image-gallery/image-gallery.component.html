@@ -1,0 +1,36 @@
+<div class="grid grid-cols-[repeat(auto-fill,_200px)] justify-center gap-4 p-4">
+  <div
+    *ngFor="let imageUrl of galleryImages()"
+    class="w-[200px] h-[200px] cursor-pointer transform transition-transform duration-200 ease-in-out hover:scale-105"
+    (click)="openImage(imageUrl)"
+  >
+    <img
+      [src]="imageUrl"
+      alt="Gallery Image"
+      class="w-full h-full object-cover"
+    />
+  </div>
+</div>
+
+<div
+  *ngIf="selectedImage"
+  class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center"
+  (click)="closeImage()"
+>
+  <div
+    class="relative bg-white rounded shadow-lg max-w-full max-h-full"
+    (click)="closeImage()"
+  >
+    <button
+      class="absolute top-2 right-2 text-black bg-gray-200 rounded p-2 hover:bg-gray-300"
+      (click)="closeImage()">
+    ✕
+    </button>
+    <img
+      [src]="selectedImage"
+      alt="Selected Image"
+      class="max-w-full max-h-screen rounded"
+    />
+  </div>
+</div>
+

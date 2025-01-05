@@ -1,35 +1,16 @@
 <div class="container mx-auto px-6 py-12">
   <div class="mb-12">
     <h2 class="text-3xl font-bold text-gray-100 mb-4">Model Painting and 3D Printing</h2>
-    <p class="text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <p class="mb-4">
+      During covid, one of the hobbies I picked up was model painting.  What started as a way to get into a tabletop game became a nice creative outlet.  I started to buy more paints, then more models, then even more paints, and all of a sudden I had a huge supply of materials.  Painting became more fun than playing, so I focused more of my time on that.
+    </p>
+    <p class="mb-4">
+      I then started to look into 3D printers as a way to get cheaper models, but from there discovered resin statues and larger builds.  3D printing props, statues, and terrain became more fun than collecting models.  I could work on different techniques and create some unique gifts for friends and family.
+    </p>
+    <p>
+      I just moved so my painting setup is still packed so here are some pictures from my phone that I've taken over the past 4ish years.
     </p>
   </div>
 
-  <div>
-    <h2 class="text-3xl font-bold text-gray-100 mb-6">Gallery</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="assets/images/dog.png"
-          alt="Gimli Image 1"
-          class="w-full h-full"
-        />
-      </div>
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="assets/images/dog.png"
-          alt="Gimli Image 2"
-          class="w-full h-full"
-        />
-      </div>
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="assets/images/dog.png"
-          alt="Gimli Image 3"
-          class="w-full h-full"
-        />
-      </div>
-    </div>
-  </div>
+  <app-image-gallery [galleryImages]="galleryImages"></app-image-gallery>
 </div>

@@ -1,35 +1,48 @@
 <div class="container mx-auto px-6 py-12">
+  <div class="flex space-x-4 p-4">
+    <img
+      src="https://static-00.iconduck.com/assets.00/github-icon-1024x994-4h5sdmko.png"
+      alt="GitHub Logo"
+      class="w-8 h-8"
+    />
+    <a
+      href="https://github.com/RyanMorrissey/hireRyanClient/"
+      class="text-lg font-medium text-blue-400 hover:underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Check out the client code!
+    </a>
+  </div>
+
   <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-100 mb-4">History with Frontend Development</h2>
-    <p class="text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2 class="text-3xl font-bold text-gray-100 mb-4 mt-4">History with Frontend Development</h2>
+    <p class="leading-relaxed mb-4">
+      My first real experience with frontend development was not until my co-op.  Being a computer science major, my education was more focused on algorithms and foundations rather than visual designs.  My enjoyment with frontend work really stems from work with javascript and typescript.  I love connecting things together to create something functional, with emphasis on being easy to maintain and port.
+    </p>
+    <p class="leading-relaxed">
+      I would say CSS is not really a strength of mine (just yet, working on it), so I am mostly using Tailwind to keep things consistent.  I am not using any templates or anything to base this site off of though, it's mostly for me to work on deployment skills and to generate a conversation piece.
     </p>
   </div>
 
   <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-100 mb-4">Technologies Used for This Website</h2>
-    <ul class="list-disc list-inside text-gray-400 space-y-2">
-      <li>
-        <span class="text-gray-200">Angular 19:</span> Why I used Angular 19.
-      </li>
-      <li>
-        <span class="text-gray-200">Tailwind:</span> My crutch ):  I'm not really experienced with CSS.
-      </li>
-      <li>
-        <span class="text-gray-200">Deployment:</span> Explain how it was deployed with AWS and Porkbun.
-      </li>
-    </ul>
+    <h2 class="text-3xl font-bold text-gray-100 mb-4">Technologies used for this website</h2>
+    <p class="mb-4">
+      <span class="text-gray-100">Spring:</span> Originally I had planned to use React but with Angular 19 coming out recently, it seemed like a good opportunity to give it a try.  I mostly focused on keeping things standalone since that was a big push for them, but am planning on messing around with the changes to signals.
+
+    </p>
+    <p>
+      <span class="text-gray-100">PostgreSQL:</span>  My crutch, but at the same time, I see more and more development using it so I don’t feel <span class="font-bold">that</span> bad about it.  I also didn’t mess around with animations because I just want to keep things simple.
+    </p>
   </div>
 
   <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-100 mb-4">Extra section</h2>
-    <ul class="list-disc list-inside text-gray-400 space-y-2">
-      <li>
-        <span class="text-gray-200">Section 1:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </li>
-      <li>
-        <span class="text-gray-200">Section 2:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </li>
-    </ul>
+    <h2 class="text-3xl font-bold text-gray-100 mb-4">Deployment Notes</h2>
+    <p class="mb-4">
+      Deployment wasn't too bad, just a basic AWS S3 bucket that holds the site.  The difficulty and learning curve really came from attaching it to my Porkbun url.  I opted to not use AWS Route 53 because I wanted to have a little friction, to let me go off-tutorial and really understand the concepts rather than blindly follow tutorials.
+    </p>
+    <p>
+      What really stalled me for a while was getting https functional.  I had some misconceptions in how certificates work and now they are registered.  Overall not too bad and a worthwhile project just from how much I learned from it.
+    </p>
   </div>
 </div>

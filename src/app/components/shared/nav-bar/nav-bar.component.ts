@@ -28,20 +28,20 @@ export class NavBarComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-      this.routerSubscription = this.router.events
-        .pipe(filter(event => event instanceof NavigationEnd))
-        .subscribe((event: NavigationEnd) => {
-          this.currentUrl = event.urlAfterRedirects.substring(1)
-          if (this.currentUrl == '') {
-            // default since I added a /home url for some reason
-            this.currentUrl = 'home'
-          }
-        });
-    }
+    this.routerSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.currentUrl = event.urlAfterRedirects.substring(1)
+        if (this.currentUrl == '') {
+          // default since I added a /home url for some reason
+          this.currentUrl = 'home'
+        }
+      });
+  }
 
-    ngOnDestroy(): void {
-      if (this.routerSubscription) {
-        this.routerSubscription.unsubscribe();
-      }
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
     }
+  }
 }

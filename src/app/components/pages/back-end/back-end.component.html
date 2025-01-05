@@ -1,35 +1,52 @@
 <div class="container mx-auto px-6 py-12">
+  <div class="flex space-x-4 p-4">
+    <img
+      src="https://static-00.iconduck.com/assets.00/github-icon-1024x994-4h5sdmko.png"
+      alt="GitHub Logo"
+      class="w-8 h-8"
+    />
+    <a
+      href="https://github.com/RyanMorrissey/hireRyanServer/"
+      class="text-lg font-medium text-blue-400 hover:underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Check out the server code!
+    </a>
+  </div>
+
   <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-100 mb-4">History with Backend Development</h2>
-    <p class="text-gray-400 leading-relaxed">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h2 class="text-3xl font-bold text-gray-100 mb-4 mt-4">History with Backend Development</h2>
+    <p class="leading-relaxed mb-4">
+      Backend work is what I am most comfortable with.  I really enjoy the architecting process and mapping out how different pieces fit together.  It’s one of those things where there are countless places to improve on.  How can I write this query so it's recognizable at a glance to other developers?  Can this be reused easily enough?  Can I separate things out better so that the code flows better?  I am constantly looking at my old code and thinking about what I could have done differently/better and that's what keeps the job so rewarding.
+    </p>
+    <p class="leading-relaxed">
+      For example, one of my favorite projects from my previous position dealt with creating a system to allow our agents to develop their own unique program pages that avoided using an old and unreliable CMS system.  An Agent can have many programs, each program may or may not span multiple colleges, each college needs to link back to a central location and so on.  Mapping it out on paper, then building each section individually and connecting them all together in a way that works was deeply rewarding.
     </p>
   </div>
 
   <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-100 mb-4">Technologies Used for This Website</h2>
-    <ul class="list-disc list-inside text-gray-400 space-y-2">
-      <li>
-        <span class="text-gray-100">Spring:</span> Haven't written it yet but it'll be spring.
-      </li>
-      <li>
-        <span class="text-gray-100">Groovy:</span> It'll use groovy
-      </li>
-      <li>
-        <span class="text-gray-100">Deployment:</span> Haven't deployed it yet.
-      </li>
-    </ul>
+    <h2 class="text-3xl font-bold text-gray-100 mb-4">Technologies used for this website</h2>
+    <p class="mb-4">
+      <span class="text-gray-100">Spring:</span> Personally I just find spring very easy to work with.  Spring boot let me set up a basic controller in a flash, and I am comfortable enough with the layout that it made sense to use.  Since this website is mostly a companion to my resume, I am not really using it too much.  My plan is to redo it in Ruby on Rails to build some extra experience with it, but that won't be deployed in AWS.
+    </p>
+    <p class="mb-4">
+      <span class="text-gray-100">Groovy:</span> Java was the first language I learned so it's what I'm most comfortable with. With Kotlin and Groovy growing so much in popularity it made sense to use them as well.  Having worked with both professionally, I didn't really have too much of an opinion on which to use so I just flipped a coin.
+    </p>
+    <p>
+      <span class="text-gray-100">PostgreSQL:</span>  I wanted to use a relational database for my backend so I went with what I'm most used to, PostgreSQL.  I have used MySQL and Microsoft SQL professionally before, so the choice didn’t matter too much to me.
+    </p>
   </div>
 
   <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-100 mb-4">Extra section</h2>
-    <ul class="list-disc list-inside text-gray-400 space-y-2">
-      <li>
-        <span class="text-gray-100">Section 1:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </li>
-      <li>
-        <span class="text-gray-100">Section 2:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </li>
+    <h2 class="text-3xl font-bold text-gray-100 mb-4">Deployment Notes</h2>
+    <ul class="list-disc list-inside space-y-2">
+      <p class="mb-4">
+        Deploying this was the biggest “learning experience” for me.  Plan was to create an AWS EC2 instance, run the jar, and be done with it.  Did you know that AWS won't let you create an ACM certificate for an EC2 instance because it wants you to use Route 53?  I didn’t!  Hence why youshouldhireryanserver.buzz came to be.
+      </p>
+      <p>
+        The certificate work, setting up CORS, as well as setting up a load balancer to handle traffic to actually use said certificate was a <span class="italic">humbling</span> experience with a lot of trial and error.
+      </p>
     </ul>
   </div>
 </div>

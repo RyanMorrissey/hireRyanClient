@@ -1,35 +1,12 @@
 <div class="container mx-auto px-6 py-12">
   <div class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-100 mb-4">About Gimli</h2>
-    <p class="text-gray-400 leading-relaxed">
-      Dog dog dog dog dog dog dog dog dog, dog dogdog dog dog dog.
+    <p class="mb-4">
+      My little man Gimli is the reason why I would prefer to work remotely.  Just over a year old, he's a cavalier king charles spaniel addicted to crunching ice cubes.  Acts as a great rubber duck for debugging.
+    </p>
+    <p>
+      I just want an excuse to post a bunch of pictures of him.  Oh wow it uses that gallery component from Hobbies that I was able to reuse so easily.
     </p>
   </div>
 
-  <div>
-    <h2 class="text-3xl font-bold text-gray-100 mb-6">Gallery</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="assets/images/pumpkin_gimli.png"
-          alt="Gimli Image 1"
-          class="object-cover w-full h-full"
-        />
-      </div>
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="assets/images/pumpkin_gimli.png"
-          alt="Gimli Image 2"
-          class="object-cover w-full h-full"
-        />
-      </div>
-      <div class="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="assets/images/pumpkin_gimli.png"
-          alt="Gimli Image 3"
-          class="object-cover w-full h-full"
-        />
-      </div>
-    </div>
-  </div>
+  <app-image-gallery [galleryImages]="galleryImages"></app-image-gallery>
 </div>
