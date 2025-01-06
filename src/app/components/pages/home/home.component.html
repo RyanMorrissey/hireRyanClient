@@ -1,20 +1,33 @@
 <div class="container mx-auto px-6 py-12">
   <div class="mx-auto">
     <div class="flex items-center mb-12">
-      <div class="w-1/5 flex justify-center pr-4">
-        <div class="overflow-hidden border-4 border-gray-600 w-48 h-48">
+      <div class="w-1/5 flex flex-col items-center pr-4">
+        <div class="overflow-hidden border-4 border-gray-600 w-48 h-48 mb-4">
           <img
-            src="assets/images/me.jpg"
+            [src]="showDog ? 'assets/images/me_and_dog.png' : 'assets/images/me.png'"
             alt="My Picture"
             class="object-cover w-full h-full"
           />
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <span>Toggle Dog</span>
+          <label class="relative inline-flex items-center">
+            <input
+              type="checkbox"
+              class="sr-only peer"
+              [checked]="showDog"
+              (change)="toggleDog()"
+            />
+            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+          </label>
         </div>
       </div>
 
       <div class="w-4/5">
         <h2 class="text-2xl font-bold text-gray-100 mb-4">Who am I?</h2>
         <p>
-          Hello! My name is Ryan Morrisey, a software developer living near Albany, New York. I graduated from Rochester Institute of Technology in 2019 and have been working as a full-stack developer since 2020.  Following a company-wide layoff, I have been looking for new work as of August 2024.  Moving delayed me a bit, but I am now back to being fully focusing on finding new work.
+          Hello! My name is Ryan Morrissey, a software developer living near Albany, New York. I graduated from Rochester Institute of Technology in 2019 and have been working as a full-stack developer since 2020. Following a company-wide layoff, I have been looking for new work as of August 2024. Moving delayed me a bit, but I am now back to being fully focused on finding new work.
         </p>
       </div>
     </div>
@@ -32,7 +45,7 @@
     <div>
       <h2 class="text-2xl font-bold text-gray-100 mb-4">Why should you hire me?</h2>
       <p>
-        I like to try new things and I have a passion for getting things done.  I adore software development and the constant improvement one can make in this career is what makes it so enjoyable.  From that enjoyment I build enthusiasm, and that enthusiasm spreads around everyone I work with.
+        I like to try new things and I have a passion for getting things done. I adore software development and the constant improvement one can make in this career is what makes it so enjoyable. From that enjoyment, I build enthusiasm, and that enthusiasm spreads around everyone I work with.
       </p>
     </div>
   </div>
