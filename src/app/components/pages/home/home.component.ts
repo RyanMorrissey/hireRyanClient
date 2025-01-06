@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
     styleUrl: './home.component.less'
 })
 export class HomeComponent {
+    showDog: boolean = false; // Tracks whether the dog image is displayed
 
+    toggleDog(): void {
+      this.showDog = !this.showDog; // Toggles the image
+    }
 }
