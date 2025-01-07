@@ -1,7 +1,7 @@
 <div class="container mx-auto px-6 py-12">
   <div class="mx-auto">
-    <div class="flex items-center mb-12">
-      <div class="w-1/5 flex flex-col items-center pr-4">
+    <div class="flex flex-wrap items-center mb-12">
+      <div class="w-full md:w-1/5 flex flex-col items-center pr-4">
         <div class="overflow-hidden border-4 border-gray-600 w-48 h-48 mb-4">
           <img
             [src]="showDog ? 'assets/images/me_and_dog.png' : 'assets/images/me.png'"
@@ -9,7 +9,6 @@
             class="object-cover w-full h-full"
           />
         </div>
-
         <div class="flex items-center space-x-2">
           <span>Toggle Dog</span>
           <label class="relative inline-flex items-center">
@@ -23,22 +22,20 @@
           </label>
         </div>
       </div>
-
-      <div class="w-4/5">
+      <div class="w-full md:w-4/5">
         <h2 class="text-2xl font-bold text-gray-100 mb-4">Who am I?</h2>
         <p>
           Hello! My name is Ryan Morrissey, a software developer living near Albany, New York. I graduated from Rochester Institute of Technology in 2019 and have been working as a full-stack developer since 2020. Following a company-wide layoff, I have been looking for new work as of August 2024. Moving delayed me a bit, but I am now back to being fully focused on finding new work.
         </p>
       </div>
     </div>
-
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-gray-100 mb-4">What is this site?</h2>
       <p class="mb-4">
-        When I started to look for work again, the idea of this site came to mind. I knew the concepts of building something from scratch as well as how to deploy it, but all of my professional work has been on things that had already been established.
+        When I started to look for work again, the idea of this site came to mind. I knew the concepts of building something from scratch as well as how to deploy it, but all of my professional work has been on things that had already been established.  Applications always have a space for a website, so why not fill it out.
       </p>
       <p>
-        I find the best way to truly understand how something works is to do it from start to finish. While visual design is not really a strength of mine, I figure I can still put something together to explain who I am. I only had a few set goals on how I wanted to deploy it. Built with an Angular 19 frontend, a Spring backend, and a Postgres database that is all deployed in AWS.
+        I find the best way to truly understand how something works is to practice it from start to finish. While visual design is not really a strength of mine, I figure I can still put something together to explain who I am. I only had a few set goals on how I wanted to deploy it. Built with an Angular 19 frontend, a Spring backend, and a Postgres database that is all deployed in AWS.
       </p>
     </div>
 
