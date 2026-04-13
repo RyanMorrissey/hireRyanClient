@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DogComponent } from '@components/pages/dog/dog.component';
@@ -9,7 +8,7 @@ import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-demo',
-  imports: [DogComponent, CommonModule, HttpTesterComponent],
+  imports: [DogComponent, HttpTesterComponent],
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.less'
 })

@@ -1,9 +1,8 @@
 import { Component, input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-image-gallery',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './image-gallery.component.html',
   styleUrls: ['./image-gallery.component.less']
 })

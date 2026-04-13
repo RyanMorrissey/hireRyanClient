@@ -1,27 +1,40 @@
 <div class="flex flex-col md:flex-row w-full h-screen">
   <div class="w-full md:w-3/5 p-4">
-    <!--I can disable everything at once but cant enable them again so brute force we go ):-->
-    <ngx-extended-pdf-viewer
-      [src]="'/assets/pdfs/resume.pdf'"
-      [height]="'auto'"
-      [showDrawEditor]="false"
-      [showFindButton]="false"
-      [showSidebarButton]="false"
-      [textLayer]="true"
-      pageViewMode="single"
-      [showFirstAndLastPageButtons]="false"
-      [showHandToolButton]="false"
-      [showRotateButton]="false"
-      [showTextEditor]="false"
-      [showOpenFileButton]="false"
-      [showFindHighlightAll]="false"
-      [showHighlightEditor]="false"
-      [showPageLabel]="false"
-      [showPageNumber]="false"
-      [showPagingButtons]="false"
-      [filenameForDownload]="'Ryan Morrissey - Resume.pdf'"
-      [zoom]="'page-width'">
-    </ngx-extended-pdf-viewer>
+    @if (isBrowser) {
+      <ngx-extended-pdf-viewer
+        [src]="'/assets/pdfs/resume.pdf'"
+        [height]="'auto'"
+        [showDrawEditor]="false"
+        [showFindButton]="false"
+        [showSidebarButton]="false"
+        [textLayer]="true"
+        pageViewMode="single"
+        [showFirstAndLastPageButtons]="false"
+        [showHandToolButton]="false"
+        [showRotateButton]="false"
+        [showTextEditor]="false"
+        [showOpenFileButton]="false"
+        [showFindHighlightAll]="false"
+        [showHighlightEditor]="false"
+        [showPageLabel]="false"
+        [showPageNumber]="false"
+        [showPagingButtons]="false"
+        [filenameForDownload]="'Ryan Morrissey - Resume.pdf'"
+        [zoom]="'page-width'">
+      </ngx-extended-pdf-viewer>
+    } @else {
+      <div class="rounded border border-gray-700 bg-gray-900/40 p-6 text-gray-100">
+        <p class="mb-4">The interactive PDF viewer loads in the browser.</p>
+        <a
+          class="inline-block rounded bg-blue-600 px-4 py-2 text-white no-underline hover:bg-blue-500"
+          href="/assets/pdfs/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open resume PDF
+        </a>
+      </div>
+    }
   </div>
 
   <div class="w-full md:w-2/5 p-4">
